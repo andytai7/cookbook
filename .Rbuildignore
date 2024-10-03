@@ -1,0 +1,4 @@
+^renv$
+^renv\.lock$
+^regressioncookbooktoydataset\.Rproj$
+^\.Rproj\.user$
