@@ -38,3 +38,40 @@
 #' }
 "OLS"
 
+#' Parametric Survival Data
+#'
+#' A dataset containing parametric survival regression toy data.
+#'
+#' @format A data frame with 1000 rows and 6 variables:
+#' \describe{
+#'   \item{id}{Unique subject identifier}
+#'   \item{age}{Age of the subject (years)}
+#'   \item{group}{Study group (A or B)}
+#'   \item{baseline_marker}{Baseline biomarker level (continuous)}
+#'   \item{comorbidity_count}{Number of comorbidities (integer)}
+#'   \item{time}{Observed survival time (event or censoring)}
+#'   \item{heart_attacks}{Event indicator (1 = event occurred, 0 = censored)}
+#' }
+"parametric_survival"
+
+#' Semiparametric Survival Data
+#'
+#' A dataset containing semiparametric survival regression toy data.
+#'
+#' @format A data frame with 1000 rows and 11 variables:
+#' \describe{
+#'   \item{time}{Observed survival time (event or censoring)}
+#'   \item{event}{Event indicator (1 = event occurred, 0 = censored)}
+#'   \item{age}{Age of the subject (years)}
+#'   \item{BMI}{Body Mass Index (continuous)}
+#'   \item{smoker}{Smoking status (1 = smoker, 0 = non-smoker)}
+#'   \item{hypertension}{Hypertension history (1 = yes, 0 = no)}
+#'   \item{cholesterol}{Cholesterol level (continuous, LDL in mg/dL)}
+#'   \item{creatinine}{Serum creatinine level (continuous, mg/dL)}
+#'   \item{diabetes}{Diabetes diagnosis (1 = yes, 0 = no)}
+#'   \item{exercise_freq}{Weekly exercise frequency (1 = regular, 0 = sedentary)}
+#'   \item{medication_adherence}{Ordinal adherence score (0 = low, 1 = moderate, 2 = high, 3 = very high)}
+#'   \item{statin_use}{Statin medication use (binary, high cholesterol + medication)}
+#' }
+"semiparametric_survival"
+
