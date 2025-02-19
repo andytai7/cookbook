@@ -5,10 +5,19 @@
 \alias{Beta}
 \title{Beta Data}
 \format{
-A data frame with X rows and Y variables:
+A data frame with 1000 rows and 11 variables:
 \describe{
-\item{var1}{description of var1}
-\item{var2}{description of var2}
+\item{Final Grade (\%)}{Description of Final Grade (\%)}
+\item{Café Location}{Description of Café Location}
+\item{Study Time}{Description of Study Time}
+\item{Year in School}{Description of Year in School}
+\item{Hobbies}{Description of Hobbies}
+\item{Primary Sport}{Description of Primary Sport}
+\item{Living Arrangement}{Description of Living Arrangement}
+\item{Part-time Work Hours}{Description of Part-time Work Hours}
+\item{Study Group Participation}{Description of Study Group Participation}
+\item{Hours of Sleep per Night}{Description of Hours of Sleep per Night}
+\item{Has a Tutor}{Description of Has a Tutor}
 }
 }
 \usage{
