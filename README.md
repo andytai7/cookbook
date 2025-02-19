@@ -3,7 +3,7 @@
 
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/andytai7/cookbook/workflows/R-CMD-check/badge.svg)](https://github.com/andytai7/cookbook/actions)
+[![R-CMD-check](https://github.com/andytai7/cookbook/workflows/r.yml/badge.svg)](https://github.com/andytai7/cookbook/actions)
 <!-- badges: end -->
 
 **cookbook** is an R package to supplement the [Regression Cookbook](https://alexrod61.github.io/regression-cookbook/). It contains datasets and
