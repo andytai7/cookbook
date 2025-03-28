@@ -16,4 +16,4 @@ functions that are used in the book.
 You can install bayesrules with devtools pacakge
 
 install.packages("devtools")
-devtools::install_github(“cookbook")
+devtools::install_github("andytai7/cookbook")
