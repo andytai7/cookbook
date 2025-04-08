@@ -105,3 +105,20 @@
 #'
 #' @note Users should not feed all the data into a model at once. Use `defaulted` for binary logistic regression, `successes` and `trials` for binomial logistic regression, and `time` and `event` for survival analysis.
 "Logistic_Regression"
+
+#' Poisson Regression Data
+#'
+#' A dataset containing synthetic data for classical Poisson regression.
+#'
+#' @format A data frame with 1000 rows and 7 variables:
+#' \describe{
+#'   \item{age}{Age of the subject (years)}
+#'   \item{income}{Annual income in USD}
+#'   \item{education_years}{Years of formal education}
+#'   \item{urban}{Urban residency status (1 = urban, 0 = rural)}
+#'   \item{married}{Marital status (1 = married, 0 = single)}
+#'   \item{insurance}{Health insurance status (1 = insured, 0 = uninsured)}
+#'   \item{doctor_visits}{Count outcome: number of doctor visits per year}
+#' }
+"poisson"
+
