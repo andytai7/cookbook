@@ -122,3 +122,47 @@
 #' }
 "poisson"
 
+#' Multinomial Transportation Mode Choice Data
+#'
+#' A dataset containing transportation mode choice data for urban planning analysis.
+#'
+#' @format A data frame with 1000 rows and 12 variables:
+#' \describe{
+#'   \item{transport_mode}{Primary transportation mode (Car, Public_Transit, Bicycle, Walking, Motorcycle)}
+#'   \item{commute_distance}{Distance to workplace in kilometers}
+#'   \item{household_vehicles}{Number of vehicles owned by household}
+#'   \item{public_transit_access}{Distance to nearest transit stop in meters}
+#'   \item{parking_cost}{Monthly parking fees at workplace in USD}
+#'   \item{transit_pass_subsidy}{Employer transit subsidies (Yes/No)}
+#'   \item{weather_sensitivity}{Weather impact on transport choice (Very Low to Very High)}
+#'   \item{environmental_concern}{Environmental awareness score (1-10)}
+#'   \item{physical_fitness}{Self-reported fitness level (Poor to Excellent)}
+#'   \item{time_flexibility}{Flexible work schedule availability (Yes/No)}
+#'   \item{neighborhood_walkability}{Walkability index of residence area (20-100)}
+#'   \item{safety_perception}{Perceived safety of transport modes (Very Unsafe to Very Safe)}
+#' }
+#' @usage multinomial_transport
+#' @note This dataset is designed for multinomial logistic regression analysis. The outcome variable is transport_mode with 5 categories.
+#' @keywords datasets
+"multinomial_transport"
+#' Gamma Server Response Time Data
+#'
+#' A dataset containing website server response time data for gamma regression analysis.
+#'
+#' @format A data frame with 1000 rows and 11 variables:
+#' \describe{
+#'   \item{response_time_ms}{Server response time in milliseconds (continuous, positive, right-skewed)}
+#'   \item{concurrent_users}{Number of simultaneous users accessing the server (1-500)}
+#'   \item{database_queries}{Number of database calls per request (1-20)}
+#'   \item{cache_hit_rate}{Percentage of requests served from cache (30.0-98.0)}
+#'   \item{server_load}{CPU utilization percentage (10.0-95.0)}
+#'   \item{time_of_day}{Hour of day when request occurred (0-23)}
+#'   \item{day_of_week}{Day of week (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday)}
+#'   \item{geographic_region}{User's geographic location (North_America, Europe, Asia_Pacific, South_America, Africa)}
+#'   \item{request_complexity}{Type of page or operation complexity (Simple, Moderate, Complex)}
+#'   \item{cdn_usage}{Content delivery network utilization (Yes = CDN used, No = direct server)}
+#'   \item{memory_usage}{RAM utilization percentage (20.0-90.0)}
+#' }
+#'
+#' @note This dataset is designed for gamma regression analysis where the outcome variable is response_time_ms, which follows a gamma distribution typical of performance metrics. The data includes realistic relationships between server load, user demand, and system performance factors commonly found in web application monitoring.
+"gamma_server"
