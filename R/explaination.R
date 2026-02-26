@@ -134,6 +134,7 @@
 #' @note This dataset is designed for multinomial logistic regression analysis. The outcome variable is transport_mode with 5 categories.
 #' @keywords datasets
 "multinomial_transport"
+
 #' Gamma Server Response Time Data
 #'
 #' A dataset containing website server response time data for gamma regression analysis.
@@ -160,34 +161,39 @@
 #'
 #' A synthetic dataset designed to demonstrate the violation of the proportional
 #' odds assumption in ordinal logistic regression. The dataset contains one
-#' predictor that has different effects at different cumulative logit cutpoints,
+#' continuous predictor whose effect varies across cumulative logit cutpoints,
 #' making it ideal for teaching model diagnostics and alternative modeling
 #' approaches.
 #'
 #' @format A data frame with 1000 rows and 5 variables:
 #' \describe{
-#'   \item{outcome}{Ordinal response variable with 3 levels (Low, Medium, High)}
+#'   \item{outcome}{Ordinal response variable with 4 levels (Low, Medium, High, Very_High)}
 #'   \item{continuous_strong_prop}{Continuous predictor with a large effect (beta = 1.20) that satisfies the proportional odds assumption}
-#'   \item{continuous_strong_nonprop}{Continuous predictor with NON-PROPORTIONAL odds. Effect varies by cutpoint: beta = 0.30 for Low|Medium+High, beta = 1.80 for Low+Medium|High}
-#'   \item{continuous_weak}{Continuous predictor with a small effect (beta = 0.05), essentially noise}
-#'   \item{category_5level}{Categorical predictor with 5 levels (Level_A through Level_E) and small effects}
+#'   \item{continuous_strong_nonprop}{Continuous predictor with NON-PROPORTIONAL odds. Effect varies by cutpoint: beta = 0.30 for Low|Medium+, beta = 1.00 for Low+Medium|High+, beta = 1.80 for Low+Medium+High|Very_High}
+#'   \item{continuous_weak}{Continuous predictor with a negligible effect (beta = 0.05), essentially noise}
+#'   \item{category_5level}{Categorical predictor with 5 levels (Level_A through Level_E) and small proportional effects}
 #' }
 #'
 #' @details
 #' The data generating process uses cumulative logit models with:
 #' \itemize{
-#'   \item Intercepts: alpha_1 = -1.0, alpha_2 = 1.5
-#'   \item \code{continuous_strong_prop}: beta = 1.20 (proportional)
-#'   \item \code{continuous_strong_nonprop}: beta_1 = 0.30, beta_2 = 1.80 (non-proportional)
-#'   \item \code{continuous_weak}: beta = 0.05 (proportional)
-#'   \item \code{category_5level}: small coefficients ranging from -0.10 to 0.20
+#'   \item Intercepts: alpha_1 = -1.5, alpha_2 = 0.0, alpha_3 = 1.5
+#'   \item \code{continuous_strong_prop}: beta = 1.20 (constant across cutpoints, proportional)
+#'   \item \code{continuous_strong_nonprop}: beta_1 = 0.30, beta_2 = 1.00, beta_3 = 1.80 (varies across cutpoints, non-proportional)
+#'   \item \code{continuous_weak}: beta = 0.05 (constant across cutpoints, proportional)
+#'   \item \code{category_5level}: small coefficients ranging from -0.10 to 0.20 (constant across cutpoints, proportional)
 #' }
 #'
 #' The key teaching point is that \code{continuous_strong_nonprop} has a weak
-#' effect on distinguishing Low from Medium+High outcomes, but a strong effect
-#' on distinguishing Low+Medium from High outcomes. A proportional odds model
-#' (e.g., \code{MASS::polr}) will estimate a single coefficient (~1.0) that
-#' represents a weighted average, failing to capture the true differential effect.
+#' effect on distinguishing Low from Medium+ outcomes, but a strong effect
+#' on distinguishing Low+Medium+High from Very_High outcomes. A proportional
+#' odds model (e.g., \code{MASS::polr}) will estimate a single averaged
+#' coefficient that fails to capture this differential effect.
+#'
+#' The Brant test should flag \code{continuous_strong_nonprop} as violating
+#' proportional odds (p < 0.05), while \code{continuous_strong_prop},
+#' \code{continuous_weak}, and \code{category_5level} should satisfy the
+#' assumption (p > 0.05).
 #'
 #' @note
 #' To properly analyze this data:
@@ -202,4 +208,5 @@
 #' @usage ordinal_nonprop
 #' @keywords datasets
 "ordinal_nonprop"
+
 
