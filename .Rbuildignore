@@ -2,3 +2,4 @@
 ^renv\.lock$
 ^regressioncookbooktoydataset\.Rproj$
 ^\.Rproj\.user$
+^data-raw$

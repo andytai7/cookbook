@@ -209,4 +209,32 @@
 #' @keywords datasets
 "ordinal_nonprop"
 
+#' Zero-Inflated Poisson Auto Insurance Claims Data
+#'
+#' A dataset containing auto insurance claim counts for zero-inflated Poisson regression.
+#' The outcome variable \code{claims} exhibits excess zeros because some policyholders are
+#' inherently low-risk drivers who essentially never file a claim (structural zeros), while
+#' others file claims at rates governed by a standard Poisson process.
+#'
+#' @format A data frame with 1000 rows and 7 variables:
+#' \describe{
+#'   \item{driver_age}{Age of the policyholder in years (18-75, continuous)}
+#'   \item{annual_mileage}{Total kilometers driven per year (2000-40000, continuous)}
+#'   \item{vehicle_age}{Age of the insured vehicle in years (0-20, integer)}
+#'   \item{male}{Sex of the policyholder (1 = male, 0 = female)}
+#'   \item{urban_area}{Primary driving environment (1 = urban, 0 = rural)}
+#'   \item{prior_claims}{Whether the driver filed claims in previous years (1 = yes, 0 = no)}
+#'   \item{claims}{Number of insurance claims filed in the past year (count, zero-inflated)}
+#' }
+#'
+#' @note This dataset is designed for zero-inflated Poisson (ZIP) regression using
+#' \code{pscl::zeroinfl()}. The data-generating process has two components: a logistic
+#' model that determines whether a driver is a structural zero (based on \code{driver_age},
+#' \code{annual_mileage}, and \code{prior_claims}), and a Poisson count model for the
+#' remaining drivers (using all six predictors). Approximately 52% of observations are
+#' zeros, with a variance-to-mean ratio well above 1, both of which are characteristic
+#' of zero-inflated count data.
+"zero_inflated_poisson"
+
+
 
