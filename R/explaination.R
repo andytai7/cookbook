@@ -236,5 +236,26 @@
 #' of zero-inflated count data.
 "zero_inflated_poisson"
 
-
+#' Generalized Poisson Regression Data
+#'
+#' A simulated dataset of 99 B-Line bus arrivals at the UBC Bus Loop during
+#' weekday morning peak hours (7-9 AM) for use in underdispersed count regression.
+#'
+#' @format A data frame with 200 rows and 5 variables:
+#' \describe{
+#'   \item{buses_per_hour}{Number of 99 B-Line buses arriving per one-hour window (count outcome)}
+#'   \item{day_of_week}{Day of the week (Monday, Tuesday, Wednesday, Thursday, Friday)}
+#'   \item{is_raining}{Precipitation indicator (1 = raining, 0 = clear)}
+#'   \item{scheduled_frequency}{Number of buses on the official timetable for that window (17-21)}
+#'   \item{time_window}{Sequential observation index within the study period (1-200, ordered Monday to Friday)}
+#' }
+#'
+#' @note This dataset is designed for Chapter 13 (underdispersed count regression). The outcome
+#' variable \code{buses_per_hour} has a mean of approximately 19.75 and a variance of
+#' approximately 13.80, yielding a variance-to-mean ratio of 0.70 -- clearly below 1.0.
+#' The Cameron-Trivedi dispersion test rejects equidispersion (z = -3.05, p = 0.002).
+#' Use this dataset to motivate generalized Poisson or COM-Poisson regression as alternatives
+#' to the standard Poisson model.
+#' @keywords datasets
+"generalized_poisson_regression"
 
