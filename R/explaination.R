@@ -259,3 +259,29 @@
 #' @keywords datasets
 "generalized_poisson_regression"
 
+#' Graduate School Application Inclination Data
+#'
+#' A simulated dataset of 1000 undergraduate students capturing their
+#' self-reported inclination to apply to graduate school, along with
+#' academic performance indicators and field of study.
+#'
+#' @format A data frame with 1000 rows and 4 variables:
+#' \describe{
+#'   \item{inclination_to_apply}{Ordinal outcome with four ordered levels
+#'     (Low, Medium, High, Very High) representing the student's
+#'     self-reported likelihood of applying to graduate school}
+#'   \item{GPA}{Cumulative grade point average on a 4.0 scale (range: 2.00--4.33)}
+#'   \item{GRE_score}{Graduate Record Examination score (range: 130--170)}
+#'   \item{field_of_study}{Undergraduate major area (Arts, Business, Humanities, STEM, Social Sciences)}
+#' }
+#'
+#' @note This dataset is designed for ordinal logistic regression. The outcome
+#' variable \code{inclination_to_apply} should be treated as an ordered factor
+#' with levels Low < Medium < High < Very High. Both continuous predictors
+#' (\code{GPA} and \code{GRE_score}) exhibit monotonically increasing means
+#' across the four outcome levels, making them well-suited for proportional
+#' odds modeling via \code{MASS::polr()}. Verify proportional odds assumptions
+#' with a Brant test before treating results as final.
+#' @keywords datasets
+"college_data"
+
